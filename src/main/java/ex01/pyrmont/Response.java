@@ -32,6 +32,7 @@ public class Response {
             System.out.println("=============");
             File file = new File(HttpServer.WEB_ROOT, request.getUri());
             if (file.exists()) {
+                //按照书上的代码没有这一句，加上这一句才能正确解析
                 String commonMsg = "HTTP/1.1 200 OK\r\n" + "Content-Type: text/html\r\n" + "\r\n";
                 output.write(commonMsg.getBytes());
                 System.out.println("cunzai");
